@@ -1,11 +1,14 @@
 import Link from "next/link";
 
 export default function Header({ menu }) {
-  console.log(4, menu);
   menu = menu[0];
   return (
     <header className="bg-white shadow-md py-4 px-8 flex justify-between items-center">
-      <div className="text-2xl font-bold text-gray-800">Waveland</div>
+      <div>
+        <div className="text-2xl font-bold text-gray-800">
+          {menu.attributes.websiteTitle}
+        </div>
+      </div>
       <nav className="space-x-4">
         {menu &&
           menu.attributes.items.map((item) => (
