@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-export default function Header({ menu }) {
+export default function Header({ menu, companyInfo }) {
   menu = menu[0];
   return (
     <header className="bg-white shadow-md py-4 px-8 flex justify-between items-center">
       <div>
         <div className="text-2xl font-bold text-gray-800">
-          {menu.attributes.websiteTitle}
+          {companyInfo.attributes.companyName} - {menu.attributes.websiteTitle}
         </div>
       </div>
       <nav className="space-x-4">

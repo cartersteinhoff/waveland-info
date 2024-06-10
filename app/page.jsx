@@ -14,14 +14,19 @@ async function getStrapiHomeContent() {
   return await fetchAPI("/home/?populate=*");
 }
 
+async function getCompanyInfo() {
+  return await fetchAPI("/company");
+}
+
 export default async function HomePage() {
   const { data: menu } = await getStrapiMenu();
   const { data: homeContent } = await getStrapiHomeContent();
+  const { data: companyInfo } = await getCompanyInfo();
   console.log(20, menu[0]);
 
   return (
     <>
-      <Header menu={menu} />
+      <Header menu={menu} companyInfo={companyInfo} />
       <div className="hero min-h-96 bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div>
